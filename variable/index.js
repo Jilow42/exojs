@@ -13,14 +13,14 @@
 // 3.
 var string = "42";
 var number = 42;
-var float = 42.42;
+var float = 42.0;
 var boolean = true;
-var array = [42 , "42"];
-var date = new Date();
-var objet = {type:"42"};
+var array = [42, "42"];
+var date = new Date(4242, 12, 24, 42, 42);
+var objet = { type: "42" };
 var dontKnow = undefined;
-var none = null;
-console.log(string, number, float, boolean, array, date, objet, dontKnow,none)
+var empty = null;
+console.log(string, number, float, boolean, array, date, objet, dontKnow, none)
 
 // 4.
 var my42count = "quarante-deux";
@@ -28,13 +28,17 @@ console.log(`${my42count} ${my42count.length}`);
 
 
 // 5.
+/**
 var verify = document.getElementById('verify');
 console.log(verify);
-
-
+**/
+// correction
+var und;
+var check = und || 42;
+console.log(check);
 
 // 6.
-var myArray42 = ["q","u","a","r","a","n","t","e","-","d","e","u","x"];
+var myArray42 = ["q", "u", "a", "r", "a", "n", "t", "e", "-", "d", "e", "u", "x"];
 
 // 7.
 var myArray42Len = myArray42.length;
@@ -44,7 +48,7 @@ console.log(myArray42Len)
 var concat = 'La grande réponse sur la vie, l’univers et le reste !'.concat(myArray42.join(""));
 
 // 9.
-var rand = [Math.floor((Math.random()* 42)+1)];
+var rand = [Math.floor((Math.random() * 42) + 1)];
 console.log(rand, rand.includes(42));
 
 // 10.
@@ -60,7 +64,7 @@ console.log(my42Type(dontKnow));
 console.log(my42Type(none));
 
 // 11.
-var compute42 = 6*7
+var compute42 = 6 * 7
 compute42.toString();
 console.log(compute42);
 
@@ -75,4 +79,4 @@ var temp = 0;
 temp = a;
 a = b;
 b = temp;
-console.log(a,b);
+console.log(a, b);
