@@ -180,3 +180,45 @@ switch(family-family%10){
         break;
 }
 alert('Ce chiffre ('+family+') fait partie de la famille des '+parent);
+
+
+/**
+ * Les boucles
+*/
+
+// 1
+var multiplTable = [1,2,3,5,8];
+for( var i = 0; i < multiplTable.length; i++){
+    for(var j = 1; j<= 10; j++ ){
+        console.log(multiplTable[i]*j)
+    }
+}
+console.log(multiplTable[i]);
+
+// 2
+var multiList = document.createElement('ul');
+for(var i = 1; i <= 10; i++) {
+    var multiplication = document.createElement('li');
+    multiplication.textContent = i + ' x 5 = ' + (i * 5);
+    multiList.appendChild(multiplication);
+}
+document.body.appendChild(multiList);
+
+// 3
+var plopStonks = 0;
+
+while (true){
+    plopStonks++
+    console.log(5*plopStonks);
+    if(plopStonks == 10){
+        break;   
+    }
+}
+
+
+// 4
+var bigTable = [1,2,3,4,5,6,7,8,9,10]
+var trans = bigTable.map(x => x * 5);
+console.log(trans);
+
+// 5
