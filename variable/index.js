@@ -88,8 +88,7 @@ console.log(a, b);
  */
 
 // 1.
-
-var valeur = prompt('Votre age');
+var valeur = parseInt(prompt('Votre age'));
 if (valeur < 18) {
   alert("Vous ne pouvez pas entrez vous n’êtes pas majeur vous avez ".concat(valeur));
 } else if (valeur >= 42) {
@@ -101,17 +100,16 @@ if (valeur < 18) {
 // 2.
 var rand = [Math.floor((Math.random() * 31))];
 if (rand <= 10) {
-  console.log('Cool')
+  alert('Cool');
 } else if (rand >= 21) {
-  console.log('Warm')
+  alert('Warm');
 } else {
-  console.log('Tepid')
+  alert('Tepid');
 }
 
 // 3.
 var date = new Date();
 var today = date.getDay();
-console.log(today);
 switch (today) {
   case 1:
     alert('nous sommes Lundi');
@@ -131,26 +129,26 @@ switch (today) {
   case 6:
     alert('nous sommes Samedi et c\'est le Weekend');
     break;
-  case 7:
+  case 0:
     alert('nous sommes Dimanche et c\'est le Weekend');
     break;
 }
 
 // 4.
-var plop = prompt('Pour commencer votre histoire entrez un mot');
+var plop = prompt('Pour commencer êtes vous un plop ?');
 if (plop === 'plop') {
-  var hist = prompt("C'est le début vous préférez");
+  var hist = prompt("C'est le début vous préférez être stonks ou la bonne réponse ?");
   if (hist === '42') {
-    window.alert('La grande réponse sur la vie, l’univers et le reste !');
+    alert('La grande réponse sur la vie, l’univers et le reste !');
   } else if (hist === 'Stonks') {
-    window.alert('Vous êtes milliardaire');
+    alert('Vous êtes milliardaire');
   } else if (hist == '12') {
-    window.alert('Noice try Bro\'')
+    alert('Noice try Bro\'');
   } else {
-    prompt('Vous êtes mort')
+    prompt('Vous êtes mort');
   }
 } else {
-  window.alert('Vous êtes mort');
+  alert('Vous êtes mort');
 }
 
 // 5.
@@ -162,9 +160,23 @@ var tern = truc === undefined ? 'cette variable n\’existe pas' : '42';
 alert(tern);
 
 // 7.
-var familly = (Number(prompt('Choisir un nombre entre 0 et 50')));
-console.log(familly)
-switch (familly)
-    case < 10:
-  console
-} 
+var family = Math.floor((Math.random() * 41));
+var parent;
+switch(family-family%10){
+    case 10:
+        var parent = 10;
+        break;
+    case 20:
+        var parent = 20;
+        break;
+    case 30:
+        var parent = 30;
+        break;
+    case 40:
+        var parent = 40;
+        break;
+    default:
+        var parent = "unités";
+        break;
+}
+alert('Ce chiffre ('+family+') fait partie de la famille des '+parent);
