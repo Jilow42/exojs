@@ -162,63 +162,104 @@ alert(tern);
 // 7.
 var family = Math.floor((Math.random() * 41));
 var parent;
-switch(family-family%10){
-    case 10:
-        var parent = 10;
-        break;
-    case 20:
-        var parent = 20;
-        break;
-    case 30:
-        var parent = 30;
-        break;
-    case 40:
-        var parent = 40;
-        break;
-    default:
-        var parent = "unités";
-        break;
+switch (family - family % 10) {
+  case 10:
+    var parent = 10;
+    break;
+  case 20:
+    var parent = 20;
+    break;
+  case 30:
+    var parent = 30;
+    break;
+  case 40:
+    var parent = 40;
+    break;
+  default:
+    var parent = "unités";
+    break;
 }
-alert('Ce chiffre ('+family+') fait partie de la famille des '+parent);
+alert('Ce chiffre (' + family + ') fait partie de la famille des ' + parent);
 
 
 /**
  * Les boucles
 */
 
-// 1
-var multiplTable = [1,2,3,5,8];
-for( var i = 0; i < multiplTable.length; i++){
-    for(var j = 1; j<= 10; j++ ){
-        console.log(multiplTable[i]*j)
-    }
+// 1.
+var multiplTable = [1, 2, 3, 5, 8];
+for (var i = 0; i < multiplTable.length; i++) {
+  for (var j = 1; j <= 10; j++) {
+    console.log(multiplTable[i] * j)
+  }
 }
 console.log(multiplTable[i]);
 
-// 2
+// 2.
 var multiList = document.createElement('ul');
-for(var i = 1; i <= 10; i++) {
-    var multiplication = document.createElement('li');
-    multiplication.textContent = i + ' x 5 = ' + (i * 5);
-    multiList.appendChild(multiplication);
+for (var i = 1; i <= 10; i++) {
+  var multiplication = document.createElement('li');
+  multiplication.textContent = i + ' x 5 = ' + (i * 5);
+  multiList.appendChild(multiplication);
 }
 document.body.appendChild(multiList);
 
-// 3
-var plopStonks = 0;
+// 3.
+var stonks = 0;
 
-while (true){
-    plopStonks++
-    console.log(5*plopStonks);
-    if(plopStonks == 10){
-        break;   
-    }
+while (true) {
+  stonks++
+  console.log(5 * stonks);
+  if (stonks == 10) {
+    break;
+  }
 }
 
 
-// 4
-var bigTable = [1,2,3,4,5,6,7,8,9,10]
+// 4.
+var bigTable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 var trans = bigTable.map(x => x * 5);
 console.log(trans);
 
-// 5
+// 5.
+ 
+
+// 7.
+
+/**
+ * Les fonctions
+ */
+
+
+// 1.
+/** 
+  * A fonction that return a string after untering a number
+  * @ myPutStr return the string sentence if it's a String
+  * @ param {any} param : a parameter that can be a String or a Number
+  */
+
+ function myPutStr(param){
+  if(typeof param !== 'String' ){
+    return "et pourquoi pas 42 ?";
+  }
+  return param;
+}
+
+// 2
+/** 
+  * A fonction to count surface area
+  * @ computeSurfaceM2 return a calcul of a square surface
+  * @ height {Number} height : a Number to calculate the surface with
+  * @ width {Number} width : a Number to calculate the surface with
+  */
+function computeSurfaceM2(height, width){
+   if(typeof height !== 'number' && typeof width !== 'number'){
+     return "Please enter numbers";
+   }
+   return `${height*width}m2 `;
+}
+
+// 3
+/**
+ * 
+ */
