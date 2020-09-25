@@ -261,5 +261,45 @@ function computeSurfaceM2(height, width){
 
 // 3
 /**
+ * a function to create a button
+ * @ createMyButton return a button
  * 
  */
+
+ function creatMyButton(params) {
+   var btn = document.createElement('button')
+   
+ }
+
+
+ /** 
+  * A fonction to check the age of spomeone
+  * @ detectMyAgeByNight return a prompt about age probleme 
+  */
+function detectMyAgeByNight(){
+
+}
+
+// 6.
+/**
+ * a function to illustrate the fibonacci suite
+ * @ nbr {number} nbr : a number that tell at witch generation to stop
+ * @ n1 {number} n1 : the first number 
+ * @ n2 {number} n2 : the second number
+ * @ somme {number} somme : a var to calculate the next generation number
+ */
+
+function fibonacci(nbr) {
+  var n1 = 0;
+  var n2 = 1;
+  var somme = 0;
+
+  for(let i = 2; i <= nbr; i++){
+     somme = n1 + n2; 
+     n1 = n2; 
+     n2 = somme; 
+  }
+
+  return nbr ? n2 : n1;
+}
+console.log(fibonacci(8));
