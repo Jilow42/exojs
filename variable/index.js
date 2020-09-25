@@ -234,8 +234,8 @@ console.log(trans);
 // 1.
 /** 
   * A fonction that return a string after untering a number
-  * @ myPutStr return the string sentence if it's a String
-  * @ param {any} param : a parameter that can be a String or a Number
+  * @myPutStr return the string sentence if it's a String
+  * @param {any} param : a parameter that can be a String or a Number
   */
 
  function myPutStr(param){
@@ -248,9 +248,9 @@ console.log(trans);
 // 2
 /** 
   * A fonction to count surface area
-  * @ computeSurfaceM2 return a calcul of a square surface
-  * @ height {Number} height : a Number to calculate the surface with
-  * @ width {Number} width : a Number to calculate the surface with
+  * @computeSurfaceM2 return a calcul of a square surface
+  * @height {Number} height : a Number to calculate the surface with
+  * @width {Number} width : a Number to calculate the surface with
   */
 function computeSurfaceM2(height, width){
    if(typeof height !== 'number' && typeof width !== 'number'){
@@ -261,32 +261,94 @@ function computeSurfaceM2(height, width){
 
 // 3
 /**
- * a function to create a button
- * @ createMyButton return a button
+  * Create my button
+  * @param {string} selector
+  */
+ var createMyButton = function createMyButton(selector) {
+  var targetEl = document.querySelector(selector);
+  var el = document.createElement('button');
+  el.textContent = 'My Button';
+  targetEl.appendChild(el);
+}
+/**
+* Detect My Age By Night
+* @param {string} selectorButton
+*/
+var detectMyAgeByNight = function detectMyAgeByNight(selectorButton) {
+var btn = document.querySelector(selectorButton);
+btn.addEventListener('click', function() {
+  var age = prompt('Entrez votre age :');
+  if (typeof parseInt(age) !== 'number') {
+    return new Error('Not is a number');
+  }
+  if (parseInt(age) <= 17) {
+    alert('Vous n\'avez pas le droit de rentrer dans le club');
+    return;
+  }
+  alert('Vous êtes majeur vous pouvez entrer dans le club');
+  return;
+});
+}
+createMyButton('#app');
+detectMyAgeByNight('button');
+
+// 4. 
+/**
+ * MatrixGenerator - generates a matrix and displays it on page
+ * @param {int[int[]]}
  * 
  */
-
- function creatMyButton(params) {
-   var btn = document.createElement('button')
-   
- }
-
-
- /** 
-  * A fonction to check the age of spomeone
-  * @ detectMyAgeByNight return a prompt about age probleme 
-  */
-function detectMyAgeByNight(){
-
+function matrixGenerator(array){
+  var matrix = document.createElement("table");
+  for (var i=0;i<array.length;i++){
+      var tr = document.createElement("tr");
+      for(var j=0;j<array[i].length;j++){
+        var td = document.createElement("td");
+        td.insertAdjacentHTML("beforeend","<span>"+array[i][j]+"</span>");
+        tr.appendChild(td);
+      }
+      matrix.appendChild(tr);
+  }
+  document.querySelector("body").appendChild(matrix);
 }
+matrixGenerator(
+[[1, 1, 1, 1, 1], [0, 1, 0, 1, 0], [1, 0, 0, 1, 1]]
+);
 
+// 5.
+/**
+ * Numerical Clock - Display a numerical clock
+ */
+var numericalClock = function numericalClock() {
+  var clock = document.querySelector('.clock');
+  var date = new Date();
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  if (seconds < 10) {
+      seconds = '0' + seconds;
+  }
+  if (minutes < 10) {
+      minutes = '0' + minutes;
+  }
+  if (hours < 10) {
+      hours = '0' + hours;
+  }
+  if (!clock) {
+      clock = document.createElement('div');
+      clock.classList.add('clock');
+      document.body.appendChild(clock);
+  }
+  clock.textContent = hours + ':' + minutes + ':' + seconds;
+};
+setInterval(numericalClock, 1000);
 // 6.
 /**
  * a function to illustrate the fibonacci suite
- * @ nbr {number} nbr : a number that tell at witch generation to stop
- * @ n1 {number} n1 : the first number 
- * @ n2 {number} n2 : the second number
- * @ somme {number} somme : a var to calculate the next generation number
+ * @nbr {number} nbr : a number that tell at witch generation to stop
+ * @n1 {number} n1 : the first number 
+ * @n2 {number} n2 : the second number
+ * @somme {number} somme : a var to calculate the next generation number
  */
 
 function fibonacci(nbr) {
